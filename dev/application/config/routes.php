@@ -38,6 +38,7 @@
 |
 */
 
+$route['teams/set'] = "admin/update_database";
 $route['admin'] = "admin/index";
 $route['default_controller'] = "vote/index";
 $route['404_override'] = '';

@@ -19,14 +19,29 @@
 
 				<h1>SWEET 16</h1>
 				<hr>
+				<table>
 
-				<?php foreach ($teams as $team): ?>
+						<?php foreach ($sweet16_teams as $team): ?>
 
-					<h1><?php echo $team['team_name']; ?></h1>
+							<tr>
+								<td>
+									
+										<input type="hidden" name="" value="<?php echo $team['team_id']; ?>">
+										<input type="text" col="3" name"num_votes">
+										<input type="submit" class="vote-button-16" name="vote" value="Vote">
+									</form>
+								</td>
+								<td>
+									<?php echo $team['team_name']; ?>
+								</td>
+								<td>
+									<div class="vote-bar" style=""></div>
+								</td>
+							</tr>
 
-					<p><?php echo $team['team_id']; ?></p>
+						<?php endforeach ?>
 
-				<?php endforeach ?>
+				</table>
 
 			</div><!--/ .TabbedClassContent -->
 
@@ -37,13 +52,26 @@
 				<h1>ELITE 8</h1>
 				<hr>
 
-				<?php foreach ($teams as $team): ?>
+					<table>
 
-					<h1><?php echo $team['team_name']; ?></h1>
+						<?php foreach ($elite8_teams as $team): ?>
 
-					<p><?php echo $team['team_id']; ?></p>
+							<tr>
+								<td>
+									<input type="text" col="3" name"votes_<?php echo $team['team_id']; ?>">
+									<input type="submit" class="vote-button-16" name="vote" value="Vote">
+								</td>
+								<td>
+									<?php echo $team['team_name']; ?>
+								</td>
+								<td>
+									<div class="vote-bar" style=""></div>
+								</td>
+							</tr>
 
-				<?php endforeach ?>
+						<?php endforeach ?>
+
+					</table>
 
 			</div><!--/ .TabbedClassContent -->
 
@@ -54,13 +82,26 @@
 				<h1>FINAL 4</h1>
 				<hr>
 
-				<?php foreach ($teams as $team): ?>
+					<table>
 
-					<h1><?php echo $team['team_name']; ?></h1>
+						<?php foreach ($final4_teams as $team): ?>
 
-					<p><?php echo $team['team_id']; ?></p>
+							<tr>
+								<td>
+									<input type="text" col="3" name"votes_<?php echo $team['team_id']; ?>">
+									<input type="submit" class="vote-button-16" name="votes_<?php echo $team['team_id']; ?>" value="Vote">
+								</td>
+								<td>
+									<?php echo $team['team_name']; ?>
+								</td>
+								<td>
+									<div class="vote-bar" style=""></div>
+								</td>
+							</tr>
 
-				<?php endforeach ?>
+						<?php endforeach ?>
+
+					</table>
 
 			</div><!--/ .TabbedClassContent -->
 
@@ -71,13 +112,26 @@
 				<h1>CHAMPIONSHIP</h1>
 				<hr>
 
-				<?php foreach ($teams as $team): ?>
+					<table>
 
-					<h1><?php echo $team['team_name']; ?></h1>
+						<?php foreach ($championship_teams as $team): ?>
 
-					<p><?php echo $team['team_id']; ?></p>
+							<tr>
+								<td>
+									<input type="text" col="3" name"votes_<?php echo $team['team_id']; ?>">
+									<input type="submit" class="vote-button-16" name="votes_<?php echo $team['team_id']; ?>" value="Vote">
+								</td>
+								<td>
+									<?php echo $team['team_name']; ?>
+								</td>
+								<td>
+									<div class="vote-bar" style=""></div>
+								</td>
+							</tr>
 
-				<?php endforeach ?>
+						<?php endforeach ?>
+
+					</table>	
 
 			</div><!--/ .TabbedClassContent -->
 

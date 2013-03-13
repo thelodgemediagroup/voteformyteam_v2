@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 12, 2013 at 06:33 AM
+-- Generation Time: Mar 13, 2013 at 02:28 AM
 -- Server version: 5.5.25
 -- PHP Version: 5.4.4
 
@@ -29,9 +29,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `championship` (
   `bracket_id` int(2) NOT NULL AUTO_INCREMENT,
   `team_id` int(9) NOT NULL,
-  `num_votes` varchar(9) NOT NULL,
   PRIMARY KEY (`bracket_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `championship`
+--
+
+INSERT INTO `championship` (`bracket_id`, `team_id`) VALUES
+(1, 16),
+(2, 15);
 
 -- --------------------------------------------------------
 
@@ -42,9 +49,22 @@ CREATE TABLE `championship` (
 CREATE TABLE `elite8` (
   `bracket_id` int(2) NOT NULL AUTO_INCREMENT,
   `team_id` int(9) NOT NULL,
-  `num_votes` int(9) NOT NULL,
   PRIMARY KEY (`bracket_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `elite8`
+--
+
+INSERT INTO `elite8` (`bracket_id`, `team_id`) VALUES
+(1, 9),
+(2, 10),
+(3, 14),
+(4, 9),
+(5, 10),
+(6, 3),
+(7, 12),
+(8, 12);
 
 -- --------------------------------------------------------
 
@@ -55,9 +75,18 @@ CREATE TABLE `elite8` (
 CREATE TABLE `final4` (
   `bracket_id` int(2) NOT NULL AUTO_INCREMENT,
   `team_id` int(9) NOT NULL,
-  `num_votes` varchar(9) NOT NULL,
   PRIMARY KEY (`bracket_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `final4`
+--
+
+INSERT INTO `final4` (`bracket_id`, `team_id`) VALUES
+(1, 8),
+(2, 10),
+(3, 10),
+(4, 8);
 
 -- --------------------------------------------------------
 
@@ -68,9 +97,30 @@ CREATE TABLE `final4` (
 CREATE TABLE `sweet16` (
   `bracket_id` int(2) NOT NULL AUTO_INCREMENT,
   `team_id` int(9) NOT NULL,
-  `num_votes` int(9) NOT NULL,
   PRIMARY KEY (`bracket_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+
+--
+-- Dumping data for table `sweet16`
+--
+
+INSERT INTO `sweet16` (`bracket_id`, `team_id`) VALUES
+(1, 8),
+(2, 10),
+(3, 4),
+(4, 7),
+(5, 5),
+(6, 3),
+(7, 14),
+(8, 7),
+(9, 11),
+(10, 16),
+(11, 9),
+(12, 9),
+(13, 11),
+(14, 7),
+(15, 7),
+(16, 15);
 
 -- --------------------------------------------------------
 
@@ -90,6 +140,7 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`team_id`, `team_name`, `team_img`) VALUES
+(0, 'Undecided', ''),
 (1, 'Indiana', ''),
 (2, 'Florida', ''),
 (3, 'Louisville', ''),
@@ -106,6 +157,19 @@ INSERT INTO `teams` (`team_id`, `team_name`, `team_img`) VALUES
 (14, 'Georgetown', ''),
 (15, 'Arizona', ''),
 (16, 'Marquette', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `votes`
+--
+
+CREATE TABLE `votes` (
+  `vote_id` int(11) NOT NULL AUTO_INCREMENT,
+  `team_id` int(11) NOT NULL,
+  `num_votes` int(11) NOT NULL,
+  PRIMARY KEY (`vote_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

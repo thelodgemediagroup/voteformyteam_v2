@@ -7,12 +7,15 @@ class Vote extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('teams_model');
+		$this->load->model('vote_model');
 	}
 
 	public function index()
 	{
-		$data['teams'] = $this->teams_model->get_teams();
-		$data['title'] = 'Team Up With The American Red Cross';
+		$data['sweet16_teams'] = $this->teams_model->get_teams_by_round('sweet16');
+		$data['elite8_teams'] = $this->teams_model->get_teams_by_round('elite8');
+		$data['final4_teams'] = $this->teams_model->get_teams_by_round('final4');
+		$data['championship_teams'] = $this->teams_model->get_teams_by_round('championship');
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('vote/index', $data);
