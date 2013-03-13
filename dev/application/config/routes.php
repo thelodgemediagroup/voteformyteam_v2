@@ -37,7 +37,7 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-
+$route['vote'] = "vote/set_votes";
 $route['teams/set'] = "admin/update_database";
 $route['admin'] = "admin/index";
 $route['default_controller'] = "vote/index";
