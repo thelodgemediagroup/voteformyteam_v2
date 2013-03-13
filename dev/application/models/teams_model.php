@@ -17,7 +17,7 @@ class Teams_model extends CI_Model
 
 	public function get_teams_by_round($round = 'sweet16')
 	{
-		$sql = "SELECT DISTINCT * FROM $round, `teams` WHERE `teams`.`team_id` = $round.`team_id`";
+		$sql = "SELECT * FROM $round, `teams` WHERE `teams`.`team_id` = $round.`team_id`";
 		$query = $this->db->query($sql);
 
 		return $query->result_array();

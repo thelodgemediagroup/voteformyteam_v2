@@ -1,3 +1,7 @@
+<?php $this->load->helper('form'); ?>
+<?php define('IMG_PATH', '/assets/teams/'); ?>
+
+
 <div id="TabbedPanels1" class="TabbedPanels">
 
 	<ul class="TabbedPanelsTabGroup">
@@ -17,21 +21,49 @@
 
 			<div class="TabbedClassContent">
 
-				<h1>SWEET 16</h1>
-				<hr>
+				<div class="contentheader">Team up with the American Red Cross</div><!--/ .contentheader -->
+				
 				<table>
 
-					<?php foreach($sweet16_teams as $team): ?>
-					
-						<tr>
-							<td><?php ?></td>
-							<td><?php echo $team['team_name']; ?></td>
-							<td><div></div></td>
+						<?php foreach ($sweet16_teams as $team): ?>
 
-						</tr>
+							<tr>
+								<td>
+									<?php
+										$sweet16_bar_length = 300;
+										$sum_votes = $total_votes[0]['total_votes'];
+										$team_id = $team['team_id'];
+										$votes = $votes_by_team[$team_id]['num_votes'];
+										$team_vote_pct = ($votes / $sum_votes);
+										$vote_bar_size = $team_vote_pct * $sweet16_bar_length;
+										
+										$sweet16_attr = array('class' => 'team');
+										$hidden = array('team_id' => $team['team_id']);
+										$input = array(
+											'name' => 'num_votes',
+											);
+										echo form_open('vote', $sweet16_attr, $hidden);
+										echo form_input($input);
+										echo form_submit('vote', 'Vote');
 
-						<?php // echo form_close(); ?>
-					<?php endforeach; ?>
+									?>
+
+									<?php echo form_close(); ?>
+
+								</td>
+								<td class="sweet16-team-row">
+								
+									<img src="<?php echo IMG_PATH.$team['team_img']; ?>" alt="<?php echo $team['team_name']; ?>" title="<?php echo $team['team_name']; ?>">
+
+								</td>
+								<td class="sweet16-end-row-l">
+									<div class="vote-bar" style="width:<?php echo $vote_bar_size; ?>px;"></div>
+								</td>
+								<td class="sweet16-end-row-r">
+								</td>
+							</tr>
+
+						<?php endforeach ?>
 
 				</table>
 
@@ -40,44 +72,153 @@
 
 			<div class="TabbedClassContent">
 
-				<hr>
-				<h1>ELITE 8</h1>
-				<hr>
+				
+				<div class="contentheader">Team up with the American Red Cross</div><!--/ .contentheader -->
+				
 
 					<table>
 
+						<?php foreach ($elite8_teams as $team): ?>
 
+							<tr>
+								<td>
+									<?php
+										$sweet16_bar_length = 300;
+										$sum_votes = $total_votes[0]['total_votes'];
+										$team_id = $team['team_id'];
+										$votes = $votes_by_team[$team_id]['num_votes'];
+										$team_vote_pct = ($votes / $sum_votes);
+										$vote_bar_size = $team_vote_pct * $sweet16_bar_length;
+										
+										$sweet16_attr = array('class' => 'team');
+										$hidden = array('team_id' => $team['team_id']);
+										$input = array(
+											'name' => 'num_votes',
+											);
+										echo form_open('vote', $sweet16_attr, $hidden);
+										echo form_input($input);
+										echo form_submit('vote', 'Vote');
 
-					</table>
+									?>
+
+									<?php echo form_close(); ?>
+
+								</td>
+								<td class="sweet16-team-row">
+									<img src="<?php echo IMG_PATH.$team['team_img']; ?>" alt="<?php echo $team['team_name']; ?>" title="<?php echo $team['team_name']; ?>">
+								</td>
+								<td class="sweet16-end-row-l">
+									<div class="vote-bar" style="width:<?php echo $vote_bar_size; ?>px;"></div>
+								</td>
+								<td class="sweet16-end-row-r">
+								</td>
+							</tr>
+
+						<?php endforeach ?>
+
+				</table>
 
 			</div><!--/ .TabbedClassContent -->
 
 
 			<div class="TabbedClassContent">
 
-				<hr>
-				<h1>FINAL 4</h1>
-				<hr>
+				
+				<div class="contentheader">Team up with the American Red Cross</div><!--/ .contentheader -->
+				
 
 					<table>
 
+						<?php foreach ($final4_teams as $team): ?>
 
-					</table>
+							<tr>
+								<td>
+									<?php
+										$sweet16_bar_length = 300;
+										$sum_votes = $total_votes[0]['total_votes'];
+										$team_id = $team['team_id'];
+										$votes = $votes_by_team[$team_id]['num_votes'];
+										$team_vote_pct = ($votes / $sum_votes);
+										$vote_bar_size = $team_vote_pct * $sweet16_bar_length;
+										
+										$sweet16_attr = array('class' => 'team');
+										$hidden = array('team_id' => $team['team_id']);
+										$input = array(
+											'name' => 'num_votes',
+											);
+										echo form_open('vote', $sweet16_attr, $hidden);
+										echo form_input($input);
+										echo form_submit('vote', 'Vote');
+
+									?>
+
+									<?php echo form_close(); ?>
+
+								</td>
+								<td class="sweet16-team-row">
+									<img src="<?php echo IMG_PATH.$team['team_img']; ?>" alt="<?php echo $team['team_name']; ?>" title="<?php echo $team['team_name']; ?>">
+								</td>
+								<td class="sweet16-end-row-l">
+									<div class="vote-bar" style="width:<?php echo $vote_bar_size; ?>px;"></div>
+								</td>
+								<td class="sweet16-end-row-r">
+								</td>
+							</tr>
+
+						<?php endforeach ?>
+
+				</table>
 
 			</div><!--/ .TabbedClassContent -->
 
 
 			<div class="TabbedClassContent">
 
-				<hr>
-				<h1>CHAMPIONSHIP</h1>
-				<hr>
+				
+				<div class="contentheader">Team up with the American Red Cross</div><!--/ .contentheader -->
+				
 
 					<table>
 
+						<?php foreach ($championship_teams as $team): ?>
 
+							<tr>
+								<td>
+									<?php
+										$sweet16_bar_length = 300;
+										$sum_votes = $total_votes[0]['total_votes'];
+										$team_id = $team['team_id'];
+										$votes = $votes_by_team[$team_id]['num_votes'];
+										$team_vote_pct = ($votes / $sum_votes);
+										$vote_bar_size = $team_vote_pct * $sweet16_bar_length;
+										
+										$sweet16_attr = array('class' => 'team');
+										$hidden = array('team_id' => $team['team_id']);
+										$input = array(
+											'name' => 'num_votes',
+											);
+										echo form_open('vote', $sweet16_attr, $hidden);
+										echo form_input($input);
+										echo form_submit('vote', 'Vote');
 
-					</table>	
+									?>
+
+									<?php echo form_close(); ?>
+
+								</td>
+								<td class="sweet16-team-row">							
+									<img src="<?php echo IMG_PATH.$team['team_img']; ?>" alt="<?php echo $team['team_name']; ?>" title="<?php echo $team['team_name']; ?>">
+								</td>
+								<td class="sweet16-end-row-l">
+									<div class="vote-bar" style="width:<?php echo $vote_bar_size; ?>px;"></div>
+								</td>
+								<td class="sweet16-end-row-r">
+								</td>
+							</tr>
+
+						<?php endforeach ?>
+
+				</table>
 
 			</div><!--/ .TabbedClassContent -->
 

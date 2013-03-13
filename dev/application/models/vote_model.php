@@ -15,16 +15,21 @@ class Vote_model extends CI_Model
 		$sql = "INSERT INTO `votes` (`team_id`, `num_votes`) VALUES (?, ?)";
 		$query = $this->db->query($sql, array($team_id, $num_votes));
 	}
-}
 
-/*
-		"UPDATE final4
-			SET team_id = CASE bracket_id
-				WHEN 1 THEN 10
-				WHEN 2 THEN 10
-				WHEN 3 THEN 10
-				WHEN 4 THEN 10
-			END
-		WHERE bracket_id IN (1,2,3,4);"
-*/
+	public function get_votes_by_team()
+	{
+		$sql = "SELECT SUM(num_votes) AS num_votes , `team_id` FROM `votes` GROUP BY `team_id`";
+		$query = $this->db->query($sql);
+
+		return $query->result_array();
+	}
+
+	public function get_total_votes()
+	{
+		$sql = "SELECT SUM(num_votes) AS total_votes FROM `votes`";
+		$query = $this->db->query($sql);
+
+		return $query->result_array();
+	}
+}
 ?>
