@@ -38,13 +38,13 @@
 										$vote_bar_size = $team_vote_pct * $sweet16_bar_length;
 										
 										$sweet16_attr = array('class' => 'team');
-										$hidden = array('team_id' => $team['team_id']);
+										$hidden = array('team_id' => $team['team_id'], 'team_name' => $team['team_name']);
 										$input = array(
 											'name' => 'num_votes',
 											);
-										echo form_open('vote', $sweet16_attr, $hidden);
+										echo form_open('start', $sweet16_attr, $hidden);
 										echo form_input($input);
-										echo form_submit('vote', 'Vote');
+										echo form_submit('start', 'Vote');
 
 									?>
 

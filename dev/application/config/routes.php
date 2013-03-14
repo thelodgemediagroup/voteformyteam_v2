@@ -37,6 +37,10 @@
 | in the URL cannot be matched to a valid route.
 |
 */
+
+$route['checkout'] = "vote/confirm_paypal";
+$route['start'] = "vote/start_paypal";
+$route['success'] = "vote/vote_success";
 $route['vote'] = "vote/set_votes";
 $route['teams/set'] = "admin/update_database";
 $route['admin'] = "admin/index";
