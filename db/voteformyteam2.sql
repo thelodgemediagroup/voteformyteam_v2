@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 13, 2013 at 06:21 PM
+-- Generation Time: Mar 15, 2013 at 09:30 AM
 -- Server version: 5.5.25
 -- PHP Version: 5.4.4
 
@@ -168,6 +168,12 @@ CREATE TABLE `votes` (
   `vote_id` int(11) NOT NULL AUTO_INCREMENT,
   `team_id` int(11) NOT NULL,
   `num_votes` int(11) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `amount` decimal(10,0) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL,
   PRIMARY KEY (`vote_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
@@ -175,28 +181,28 @@ CREATE TABLE `votes` (
 -- Dumping data for table `votes`
 --
 
-INSERT INTO `votes` (`vote_id`, `team_id`, `num_votes`) VALUES
-(0, 0, 0),
-(1, 1, 10),
-(2, 2, 10),
-(3, 3, 0),
-(4, 4, 0),
-(5, 5, 0),
-(6, 6, 0),
-(7, 7, 5),
-(8, 8, 0),
-(9, 9, 0),
-(10, 10, 0),
-(11, 10, 0),
-(12, 11, 0),
-(13, 12, 0),
-(14, 13, 0),
-(15, 14, 0),
-(16, 15, 0),
-(17, 16, 0),
-(18, 5, 4),
-(19, 10, 2),
-(20, 4, 10);
+INSERT INTO `votes` (`vote_id`, `team_id`, `num_votes`, `token`, `amount`, `email`, `first_name`, `last_name`, `time`) VALUES
+(0, 0, 0, '', 0, '', '', '', ''),
+(1, 1, 10, '', 0, '', '', '', ''),
+(2, 2, 10, '', 0, '', '', '', ''),
+(3, 3, 0, '', 0, '', '', '', ''),
+(4, 4, 0, '', 0, '', '', '', ''),
+(5, 5, 0, '', 0, '', '', '', ''),
+(6, 6, 0, '', 0, '', '', '', ''),
+(7, 7, 5, '', 0, '', '', '', ''),
+(8, 8, 0, '', 0, '', '', '', ''),
+(9, 9, 0, '', 0, '', '', '', ''),
+(10, 10, 0, '', 0, '', '', '', ''),
+(11, 10, 0, '', 0, '', '', '', ''),
+(12, 11, 0, '', 0, '', '', '', ''),
+(13, 12, 0, '', 0, '', '', '', ''),
+(14, 13, 0, '', 0, '', '', '', ''),
+(15, 14, 0, '', 0, '', '', '', ''),
+(16, 15, 0, '', 0, '', '', '', ''),
+(17, 16, 0, '', 0, '', '', '', ''),
+(18, 5, 4, '', 0, '', '', '', ''),
+(19, 10, 2, '', 0, '', '', '', ''),
+(20, 4, 10, '', 0, '', '', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

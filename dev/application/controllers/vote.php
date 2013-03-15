@@ -29,18 +29,28 @@ class Vote extends CI_Controller
 	public function start_paypal()
 	{
 		$data['paypal_data'] = $this->paypal_model->start_checkout();
-		//$data['finish_checkout'] = $this->paypal_model->confirm_checkout();
-		//$this->firephp($paypal_data);
-		//$this->load->view('templates/header', $data);
-		//$this->load->view('vote/success', $data);
-		//$this->load->view('templates/footer', $data);
 	}
 
 	public function confirm_paypal()
 	{
-		//$result['result'] = $this->paypal_model->confirm_checkout();
-		$result = $this->paypal_model->confirm_checkout();
-		$data['finish'] = $this->paypal_model->finish_checkout($result);
+		$data['result'] = $this->paypal_model->confirm_checkout();
+
+		$this->load->view('templates/header', $data);
+		$this->load->view('vote/confirm', $data);
+		$this->load->view('templates/footer', $data);
+	}
+
+	public function finish_paypal()
+	{
+		$result = $_POST;
+		$this->firephp->log($result);
+		$finish = $this->paypal_model->finish_checkout($result);
+		$record = $this->vote_model->set_vote($result);
+
+
+		$this->load->view('templates/header', $result);
+		$this->load->view('vote/success', $result);
+		$this->load->view('templates/footer', $result);
 	}
 
 	public function set_votes()

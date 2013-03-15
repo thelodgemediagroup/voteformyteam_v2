@@ -37,7 +37,7 @@
 										$team_vote_pct = ($votes / $sum_votes);
 										$vote_bar_size = $team_vote_pct * $sweet16_bar_length;
 										
-										$sweet16_attr = array('class' => 'team', 'target' => 'blank');
+										$sweet16_attr = array('class' => 'team', 'target' => '_blank');
 										$hidden = array('team_id' => $team['team_id'], 'team_name' => $team['team_name']);
 										$input = array(
 											'name' => 'num_votes',

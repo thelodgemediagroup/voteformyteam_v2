@@ -38,6 +38,7 @@
 |
 */
 
+$route['finish'] = "vote/finish_paypal";
 $route['checkout'] = "vote/confirm_paypal";
 $route['start'] = "vote/start_paypal";
 $route['success'] = "vote/vote_success";

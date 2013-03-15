@@ -7,13 +7,19 @@ class Vote_model extends CI_Model
 		$this->load->database();
 	}
 
-	public function set_vote()
+	public function set_vote($result)
 	{
-		$team_id = $_POST['team_id'];
-		$num_votes = $_POST['num_votes'];
 
-		$sql = "INSERT INTO `votes` (`team_id`, `num_votes`) VALUES (?, ?)";
-		$query = $this->db->query($sql, array($team_id, $num_votes));
+		$token = $result['TOKEN'];
+		$team_id = $result['PAYMENTREQUEST_0_NUMBER'];
+		$num_votes = $result['PAYMENTREQUEST_0_QTY'];
+		$amount = $result['AMT'];
+		$first_name = $result['FIRSTNAME'];
+		$last_name = $result['LASTNAME'];
+		$time = $result['TIMESTAMP'];
+
+		$sql = "INSERT INTO `votes` (`team_id`, `num_votes`, , `token`, `amount`, `first_name`, `last_name`, `time`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		$query = $this->db->query($sql, array($team_id, $num_votes, $token, $amount, $first_name, $last_name, $time));
 	}
 
 	public function get_votes_by_team()

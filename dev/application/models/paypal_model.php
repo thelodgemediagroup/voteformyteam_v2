@@ -41,6 +41,8 @@ class Paypal_model extends CI_Model
 			'PAYMENTREQUEST_0_ITEMAMT' => urlencode($payment_amt),
 			'ITEMAMT' => urlencode($num_votes),
 			'PAYMENTREQUEST_0_DESC' => urlencode($paypal_description),
+			'PAYMENTREQUEST_0_NUMBER' => urlencode($team_id),
+			'PAYMENTREQUEST_0_QTY' => urlencode($num_votes),
 			'PAYMENTREQUEST_0_CURRENCYCODE' => urlencode('USD'),
 			'CANCELURL' => urlencode('http://www.voteformyteam.com'),
 			'RETURNURL' => urlencode('http://www.voteformyteam.com/checkout')
@@ -196,7 +198,6 @@ class Paypal_model extends CI_Model
 		{
 			//save_transaction();
 			echo 'Payment completed';
-			$this->firephp->log($result);
 		}
 		else
 		{

@@ -92,3 +92,27 @@ table td {
 	border-left: 3px solid #CBCBCB;
 	width: 29px;
 }
+
+#confirm {
+	width: 820px;
+	background-color: white;
+	padding: 20px;
+}
+
+#voter-info, #voter-pay {
+	margin-top: 20px
+}
+
+#voter-pay {
+	margin-top: 50px;
+}
+
+#voter-info td {
+	width: 200px;
+}
+
+#voter-pay td {
+	text-align: center;
+	width: 300px;
+}
+
