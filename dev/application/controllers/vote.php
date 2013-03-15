@@ -43,14 +43,34 @@ class Vote extends CI_Controller
 	public function finish_paypal()
 	{
 		$result = $_POST;
-		$this->firephp->log($result);
+		$data['email'] = $_POST;
 		$finish = $this->paypal_model->finish_checkout($result);
 		$record = $this->vote_model->set_vote($result);
 
 
-		$this->load->view('templates/header', $result);
-		$this->load->view('vote/success', $result);
-		$this->load->view('templates/footer', $result);
+		$this->load->view('templates/header', $data);
+		$this->load->view('vote/success', $data);
+		$this->load->view('templates/footer', $data);
+	}
+
+	public function send_email()
+	{
+		$challenger = $_POST['challenger'];
+		$challenge_message = $_POST['challenge_message'];
+		$email_header = "You've been challenged at VoteForMyTeam.com!"; 
+		$sender = $_POST['sender_email'];
+
+		$this->load->library('email');
+
+		$this->email->from($sender);
+		$this->email->to($challenger);
+		$this->email->subject($email_header);
+		$this->email->message($challenge_message);
+		$this->email->send();
+
+		$this->load->view('templates/header');
+		$this->load->view('vote/email');
+		$this->load->view('templates/footer');
 	}
 
 	public function set_votes()

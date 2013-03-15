@@ -9,9 +9,14 @@ class Paypal_model extends CI_Model
 
 	public function start_checkout()
 	{
+		/*  //This is the first account
 		$paypal_user = 'jslind-facilitator_api1.bex.net';
 		$paypal_pwd = '1363196681';
 		$paypal_signature = 'AQU0e5vuZCvSg-XJploSa.sGUDlpAOzMLzUxz.wKZGk0SKuJOFmzOKTt';
+		*/
+		$paypal_user = 'jslind-testing_api1.test.com';
+		$paypal_pwd = '1363372943';
+		$paypal_signature = 'ADvbVGgx3GmD9N8NvmhgLthtO2nGA4b.NtER6vez61j.28zww3FcWNOm';
 
 		$paypal_target = 'https://api-3t.sandbox.paypal.com/nvp';
 
@@ -39,11 +44,15 @@ class Paypal_model extends CI_Model
 			'PAYMENTREQUEST_0_AMT' => urlencode($payment_amt),
 			'PAYMENTREQUEST_0_AMT0' => urlencode($payment_amt),
 			'PAYMENTREQUEST_0_ITEMAMT' => urlencode($payment_amt),
+			'L_PAYMENTREQUEST_0_NAME0' => urlencode($paypal_description),
+			'L_PAYMENTREQUEST_0_DESC0' => urlencode($team_id),
+			'L_PAYMENTREQUEST_0_AMT0' => urlencode('1.00'),
+			'L_PAYMENTREQUEST_0_QTY0' => urlencode($num_votes),
 			'ITEMAMT' => urlencode($num_votes),
 			'PAYMENTREQUEST_0_DESC' => urlencode($paypal_description),
-			'PAYMENTREQUEST_0_NUMBER' => urlencode($team_id),
-			'PAYMENTREQUEST_0_QTY' => urlencode($num_votes),
 			'PAYMENTREQUEST_0_CURRENCYCODE' => urlencode('USD'),
+			'PAYMENTREQUEST_0_SHIPPINGAMT' => urlencode('0.00'),
+			'PAYMENTREQUEST_0_TAXAMT' => urlencode('0.00'),
 			'CANCELURL' => urlencode('http://www.voteformyteam.com'),
 			'RETURNURL' => urlencode('http://www.voteformyteam.com/checkout')
 			);
@@ -92,10 +101,15 @@ class Paypal_model extends CI_Model
 	
 	function confirm_checkout()
 	{
-		
+/*		
 		$paypal_user = 'jslind-facilitator_api1.bex.net';
 		$paypal_pwd = '1363196681';
 		$paypal_signature = 'AQU0e5vuZCvSg-XJploSa.sGUDlpAOzMLzUxz.wKZGk0SKuJOFmzOKTt';
+*/
+		$paypal_user = 'jslind-testing_api1.test.com';
+		$paypal_pwd = '1363372943';
+		$paypal_signature = 'ADvbVGgx3GmD9N8NvmhgLthtO2nGA4b.NtER6vez61j.28zww3FcWNOm';
+
 		$paypal_target = 'https://api-3t.sandbox.paypal.com/nvp';
 
 		$fields = array(
@@ -144,19 +158,15 @@ class Paypal_model extends CI_Model
 
 	function finish_checkout($result)
 	{
-		$this->firephp->log($result);
-		/*$this->firephp->log("About to loop result");
-		foreach ($result as $key => $value)
-			{
-				foreach ($value as $key => $value)
-				{
-					$this->firephp->log('key: '.$key.', value: '.$value);	
-				}
-			}
-		$this->firephp->log("Finished the loop!"); */
+/*		
 		$paypal_user = 'jslind-facilitator_api1.bex.net';
 		$paypal_pwd = '1363196681';
 		$paypal_signature = 'AQU0e5vuZCvSg-XJploSa.sGUDlpAOzMLzUxz.wKZGk0SKuJOFmzOKTt';
+*/
+		$paypal_user = 'jslind-testing_api1.test.com';
+		$paypal_pwd = '1363372943';
+		$paypal_signature = 'ADvbVGgx3GmD9N8NvmhgLthtO2nGA4b.NtER6vez61j.28zww3FcWNOm';
+
 		$paypal_target = 'https://api-3t.sandbox.paypal.com/nvp';
 
 		$fields = array(
@@ -191,13 +201,11 @@ class Paypal_model extends CI_Model
 		$result = curl_exec($ch);
 
 		curl_close($ch);
-		echo $result;
 		parse_str($result, $result);
 
 		if ( $result['ACK'] == 'Success')
 		{
-			//save_transaction();
-			echo 'Payment completed';
+			return $result;
 		}
 		else
 		{

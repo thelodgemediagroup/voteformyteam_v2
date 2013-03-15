@@ -11,14 +11,14 @@ class Vote_model extends CI_Model
 	{
 
 		$token = $result['TOKEN'];
-		$team_id = $result['PAYMENTREQUEST_0_NUMBER'];
-		$num_votes = $result['PAYMENTREQUEST_0_QTY'];
+		$team_id = $result['L_PAYMENTREQUEST_0_DESC0'];
+		$num_votes = $result['L_PAYMENTREQUEST_0_QTY0'];
 		$amount = $result['AMT'];
 		$first_name = $result['FIRSTNAME'];
 		$last_name = $result['LASTNAME'];
 		$time = $result['TIMESTAMP'];
 
-		$sql = "INSERT INTO `votes` (`team_id`, `num_votes`, , `token`, `amount`, `first_name`, `last_name`, `time`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO `votes` (`team_id`, `num_votes`, `token`, `amount`, `first_name`, `last_name`, `time`) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		$query = $this->db->query($sql, array($team_id, $num_votes, $token, $amount, $first_name, $last_name, $time));
 	}
 
@@ -37,5 +37,6 @@ class Vote_model extends CI_Model
 
 		return $query->result_array();
 	}
+
 }
 ?>
