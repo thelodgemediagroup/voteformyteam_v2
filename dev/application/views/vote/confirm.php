@@ -1,3 +1,5 @@
+<p>Confirm Transaction</p>
 <?php
-$this->firephp->log("I'm confirming now");
+
+
 ?>

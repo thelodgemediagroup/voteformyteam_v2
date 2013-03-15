@@ -37,7 +37,7 @@
 										$team_vote_pct = ($votes / $sum_votes);
 										$vote_bar_size = $team_vote_pct * $sweet16_bar_length;
 										
-										$sweet16_attr = array('class' => 'team');
+										$sweet16_attr = array('class' => 'team', 'target' => 'blank');
 										$hidden = array('team_id' => $team['team_id'], 'team_name' => $team['team_name']);
 										$input = array(
 											'name' => 'num_votes',
@@ -45,10 +45,27 @@
 										echo form_open('start', $sweet16_attr, $hidden);
 										echo form_input($input);
 										echo form_submit('start', 'Vote');
-
+										
 									?>
 
 									<?php echo form_close(); ?>
+
+									<!-- <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST">
+										<input type="hidden" name="cmd" value="xclick">
+										<input type="hidden" name="upload" value="1">
+										<input type="hidden" name="business" value="jslind-facilitator@bex.net">
+										<input type="hidden" name="item_number" value="<?php // echo $team['team_id']; ?>">
+										<input type="hidden" name="item_name" value="<?php //echo $team['team_name']; ?>">
+										<input type="hidden" name="amount" value="1.00">
+										<input type="text" name="quantity">
+										<input type="hidden" name="return_url" value="http://www.voteformyteam.com/challenge">
+										<input type="hidden" name="cancel_url" value="http://www.voteformyteam.com">
+										<input type="hidden" name="notify_url" value="http://www.voteformyteam.com/success">
+										<input type="hidden" name="currency_code" value="USD">
+										<input type="submit" name="vote" value="vote" />
+									</form> -->
+
+
 
 								</td>
 								<td class="sweet16-team-row">
