@@ -41,7 +41,8 @@
 										$sweet16_attr = array('class' => 'team', 'target' => '_blank');
 										$hidden = array('team_id' => $team['team_id'], 'team_name' => $team['team_name']);
 										$input = array(
-											'name' => 'num_votes',
+											'name' 	=> 'num_votes',
+											'class'	=> 'num_votes' 
 											);
 										echo form_open('start', $sweet16_attr, $hidden);
 										echo form_input($input);
