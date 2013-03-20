@@ -9,30 +9,39 @@ class Paypal_model extends CI_Model
 
 	public function start_checkout()
 	{
-		/*  //This is the first account
-		$paypal_user = 'jslind-facilitator_api1.bex.net';
-		$paypal_pwd = '1363196681';
-		$paypal_signature = 'AQU0e5vuZCvSg-XJploSa.sGUDlpAOzMLzUxz.wKZGk0SKuJOFmzOKTt';
-		*/
-		$paypal_user = 'jslind-testing_api1.test.com';
-		$paypal_pwd = '1363372943';
-		$paypal_signature = 'ADvbVGgx3GmD9N8NvmhgLthtO2nGA4b.NtER6vez61j.28zww3FcWNOm';
 
-		$paypal_target = 'https://api-3t.sandbox.paypal.com/nvp';
+		$votes = array();
+		$vote_tally = 0;
 
-		$num_votes = $_POST['num_votes'];
-		$team_id = $_POST['team_id'];
-		$team_name = $_POST['team_name'];
-		$payment_amt = $num_votes * 1.00;
-		if ($num_votes > 1)
+		foreach ($_POST as $key => $value)
 		{
-			$vote_string = "Votes";
+			if (($value > 0) && is_numeric($value))
+			{
+				$votes[$key] = $value;
+				$vote_tally += $value;
+			}
+		}
+		
+		// Formatting for paypal
+		$paypal_votes = json_encode($votes);
+		$payment_amt = number_format($vote_tally, 2, '.', '');
+		$vote_quantity = intval($vote_tally);
+
+		
+		// Format paypal name
+		if ($vote_tally >= 2)
+		{
+			$paypal_description = 'Votes to Donate';
 		}
 		else
 		{
-			$vote_string = "Vote";
+			$paypal_description = 'Vote to Donate';
 		}
-		$paypal_description = $num_votes.' '.$vote_string.' for '.$team_name;
+
+		$paypal_user = 'jslind-testing_api1.test.com';
+		$paypal_pwd = '1363372943';
+		$paypal_signature = 'ADvbVGgx3GmD9N8NvmhgLthtO2nGA4b.NtER6vez61j.28zww3FcWNOm';
+		$paypal_target = 'https://api-3t.sandbox.paypal.com/nvp';		
 
 		$fields = array(
 			'USER' => urlencode($paypal_user),
@@ -45,16 +54,17 @@ class Paypal_model extends CI_Model
 			'PAYMENTREQUEST_0_AMT0' => urlencode($payment_amt),
 			'PAYMENTREQUEST_0_ITEMAMT' => urlencode($payment_amt),
 			'L_PAYMENTREQUEST_0_NAME0' => urlencode($paypal_description),
-			'L_PAYMENTREQUEST_0_DESC0' => urlencode($team_id),
+			'L_PAYMENTREQUEST_0_DESC0' => urlencode('voteformyteam.com'),
 			'L_PAYMENTREQUEST_0_AMT0' => urlencode('1.00'),
-			'L_PAYMENTREQUEST_0_QTY0' => urlencode($num_votes),
-			'ITEMAMT' => urlencode($num_votes),
+			'L_PAYMENTREQUEST_0_QTY0' => urlencode($vote_quantity),
+			'PAYMENTREQUEST_0_CUSTOM' => urlencode($paypal_votes),
+			'ITEMAMT' => urlencode($payment_amt),
 			'PAYMENTREQUEST_0_DESC' => urlencode($paypal_description),
 			'PAYMENTREQUEST_0_CURRENCYCODE' => urlencode('USD'),
 			'PAYMENTREQUEST_0_SHIPPINGAMT' => urlencode('0.00'),
 			'PAYMENTREQUEST_0_TAXAMT' => urlencode('0.00'),
-			'CANCELURL' => urlencode('http://www.voteformyteam.com'),
-			'RETURNURL' => urlencode('http://www.voteformyteam.com/checkout')
+			'CANCELURL' => urlencode('http://localhost:80/'),
+			'RETURNURL' => urlencode('http://localhost:80/index.php/checkout')
 			);
 
 		$fields_string = '';
@@ -158,11 +168,7 @@ class Paypal_model extends CI_Model
 
 	function finish_checkout($result)
 	{
-/*		
-		$paypal_user = 'jslind-facilitator_api1.bex.net';
-		$paypal_pwd = '1363196681';
-		$paypal_signature = 'AQU0e5vuZCvSg-XJploSa.sGUDlpAOzMLzUxz.wKZGk0SKuJOFmzOKTt';
-*/
+
 		$paypal_user = 'jslind-testing_api1.test.com';
 		$paypal_pwd = '1363372943';
 		$paypal_signature = 'ADvbVGgx3GmD9N8NvmhgLthtO2nGA4b.NtER6vez61j.28zww3FcWNOm';

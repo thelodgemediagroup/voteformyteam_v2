@@ -2,6 +2,7 @@
 
 	<h2>Confirm Payment</h2>
 
+	<?php $this->firephp->log($result); ?>
 	<table id="voter-info">
 
 		<tr>
