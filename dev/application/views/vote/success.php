@@ -7,7 +7,7 @@ $this->load->helper('url');
 
 <?php
 
-$challenge_prepare = 'I donated '.$email['DESC'].' to the American Red Cross for the 2013 March Madness Tournament. Which team are you going to pick?';
+$challenge_prepare = 'I donated '.$email['L_QTY0'].' votes to the American Red Cross for the 2013 March Madness Tournament. Which team are you going to pick?';
 
 ?>
 <div id="confirm">

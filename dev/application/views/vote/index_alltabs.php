@@ -7,13 +7,13 @@
 	<ul class="TabbedPanelsTabGroup">
 
     	<li class="TabbedPanelsTab" tabindex="0"><center>SWEET 16</center></li>
-
+    	<?php /*
     	<li class="TabbedPanelsTab" tabindex="0"><center>ELITE 8</center></li>
 
     	<li class="TabbedPanelsTab" tabindex="0"><center>FINAL 4</center></li>
 
         <li class="TabbedPanelsTab" tabindex="0"><center>CHAMPIONSHIP</center></li>
-
+		*/ ?>
     </ul><!-- .TabbedPanelsTabGroup -->
 
 
@@ -25,31 +25,33 @@
 				
 				<table>
 
+					<?php
+					$form_attr = array('class' => 'team', 'target' => '_blank');
+					$submit_attr = array('name' => 'start', 'class' => 'vote-submit');
+					echo form_open('start', $form_attr);
+
+					?>
+
 						<?php foreach ($sweet16_teams as $team): ?>
 
 							<tr>
 								<td>
 									<?php
-										$sweet16_bar_length = 300;
+										$team_bar_length = 300;
 										$sum_votes = $total_votes[0]['total_votes'];
 										$team_id = $team['team_id'];
 										$votes = $votes_by_team[$team_id]['num_votes'];
-										$team_vote_pct = ($votes / $sum_votes);
+										if ($sum_votes > 0)
+										{
+											$team_vote_pct = ($votes / $sum_votes);	
+										}
+										else {$team_vote_pct = 0;}
 										$percent_display = intval($team_vote_pct * 100);
-										$vote_bar_size = $team_vote_pct * $sweet16_bar_length;
-										
-										$sweet16_attr = array('class' => 'team', 'target' => '_blank');
-										$hidden = array('team_id' => $team['team_id'], 'team_name' => $team['team_name']);
-										$input = array(
-											'name' => 'num_votes',
-											);
-										echo form_open('start', $sweet16_attr, $hidden);
-										echo form_input($input);
-										echo form_submit('start', 'Vote');
-										
+										$vote_bar_size = $team_vote_pct * $team_bar_length;
 									?>
 
-									<?php echo form_close(); ?>
+									<input type="text" name="team_<?php echo $team['team_id']; ?>" class="num_votes">
+									
 
 								</td>
 								<td class="sweet16-team-row">
@@ -69,9 +71,16 @@
 
 				</table>
 
+						<?php
+
+						echo form_submit($submit_attr, 'Vote');
+						echo form_close();
+
+						?>
+
 			</div><!--/ .TabbedClassContent -->
 
-
+			
 			<div class="TabbedClassContent">
 
 				
@@ -79,32 +88,33 @@
 				
 
 					<table>
+
+					<?php
+					$form_attr = array('class' => 'team', 'target' => '_blank');
+					echo form_open('start', $form_attr);
+
+					?>
 
 						<?php foreach ($elite8_teams as $team): ?>
 
 							<tr>
 								<td>
 									<?php
-										$sweet16_bar_length = 300;
+										$team_bar_length = 300;
 										$sum_votes = $total_votes[0]['total_votes'];
 										$team_id = $team['team_id'];
 										$votes = $votes_by_team[$team_id]['num_votes'];
-										$team_vote_pct = ($votes / $sum_votes);
+										if ($sum_votes > 0)
+										{
+											$team_vote_pct = ($votes / $sum_votes);	
+										}
+										else {$team_vote_pct = 0;}
 										$percent_display = intval($team_vote_pct * 100);
-										$vote_bar_size = $team_vote_pct * $sweet16_bar_length;
-										
-										$sweet16_attr = array('class' => 'team', 'target' => '_blank');
-										$hidden = array('team_id' => $team['team_id'], 'team_name' => $team['team_name']);
-										$input = array(
-											'name' => 'num_votes',
-											);
-										echo form_open('start', $sweet16_attr, $hidden);
-										echo form_input($input);
-										echo form_submit('start', 'Vote');
-										
+										$vote_bar_size = $team_vote_pct * $team_bar_length;
 									?>
 
-									<?php echo form_close(); ?>
+									<input type="text" name="team_<?php echo $team['team_id']; ?>" class="num_votes">
+									
 
 								</td>
 								<td class="sweet16-team-row">
@@ -124,6 +134,13 @@
 
 				</table>
 
+						<?php
+
+						echo form_submit($submit_attr, 'Vote');
+						echo form_close();
+
+						?>
+
 			</div><!--/ .TabbedClassContent -->
 
 
@@ -134,32 +151,33 @@
 				
 
 					<table>
+
+					<?php
+					$form_attr = array('class' => 'team', 'target' => '_blank');
+					echo form_open('start', $form_attr);
+
+					?>
 
 						<?php foreach ($final4_teams as $team): ?>
 
 							<tr>
 								<td>
 									<?php
-										$sweet16_bar_length = 300;
+										$team_bar_length = 300;
 										$sum_votes = $total_votes[0]['total_votes'];
 										$team_id = $team['team_id'];
 										$votes = $votes_by_team[$team_id]['num_votes'];
-										$team_vote_pct = ($votes / $sum_votes);
+										if ($sum_votes > 0)
+										{
+											$team_vote_pct = ($votes / $sum_votes);	
+										}
+										else {$team_vote_pct = 0;}
 										$percent_display = intval($team_vote_pct * 100);
-										$vote_bar_size = $team_vote_pct * $sweet16_bar_length;
-										
-										$sweet16_attr = array('class' => 'team', 'target' => '_blank');
-										$hidden = array('team_id' => $team['team_id'], 'team_name' => $team['team_name']);
-										$input = array(
-											'name' => 'num_votes',
-											);
-										echo form_open('start', $sweet16_attr, $hidden);
-										echo form_input($input);
-										echo form_submit('start', 'Vote');
-										
+										$vote_bar_size = $team_vote_pct * $team_bar_length;
 									?>
 
-									<?php echo form_close(); ?>
+									<input type="text" name="team_<?php echo $team['team_id']; ?>" class="num_votes">
+									
 
 								</td>
 								<td class="sweet16-team-row">
@@ -178,6 +196,13 @@
 						<?php endforeach ?>
 
 				</table>
+
+						<?php
+
+						echo form_submit($submit_attr, 'Vote');
+						echo form_close();
+
+						?>
 			</div><!--/ .TabbedClassContent -->
 
 
@@ -189,31 +214,32 @@
 
 					<table>
 
+					<?php
+					$form_attr = array('class' => 'team', 'target' => '_blank');
+					echo form_open('start', $form_attr);
+
+					?>
+
 						<?php foreach ($championship_teams as $team): ?>
 
 							<tr>
 								<td>
 									<?php
-										$sweet16_bar_length = 300;
+										$team_bar_length = 300;
 										$sum_votes = $total_votes[0]['total_votes'];
 										$team_id = $team['team_id'];
 										$votes = $votes_by_team[$team_id]['num_votes'];
-										$team_vote_pct = ($votes / $sum_votes);
+										if ($sum_votes > 0)
+										{
+											$team_vote_pct = ($votes / $sum_votes);	
+										}
+										else {$team_vote_pct = 0;}
 										$percent_display = intval($team_vote_pct * 100);
-										$vote_bar_size = $team_vote_pct * $sweet16_bar_length;
-										
-										$sweet16_attr = array('class' => 'team', 'target' => '_blank');
-										$hidden = array('team_id' => $team['team_id'], 'team_name' => $team['team_name']);
-										$input = array(
-											'name' => 'num_votes',
-											);
-										echo form_open('start', $sweet16_attr, $hidden);
-										echo form_input($input);
-										echo form_submit('start', 'Vote');
-										
+										$vote_bar_size = $team_vote_pct * $team_bar_length;
 									?>
 
-									<?php echo form_close(); ?>
+									<input type="text" name="team_<?php echo $team['team_id']; ?>" class="num_votes">
+									
 
 								</td>
 								<td class="sweet16-team-row">
@@ -233,8 +259,15 @@
 
 				</table>
 
-			</div><!--/ .TabbedClassContent -->
+						<?php
 
+						echo form_submit($submit_attr, 'Vote');
+						echo form_close();
+
+						?>
+
+			</div><!--/ .TabbedClassContent -->
+			
 	</div><!--/ .TabbedPanelsContentGroup -->
 
 </div><!--/ #TabbedPanels1 -->
