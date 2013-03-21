@@ -63,8 +63,8 @@ class Paypal_model extends CI_Model
 			'PAYMENTREQUEST_0_CURRENCYCODE' => urlencode('USD'),
 			'PAYMENTREQUEST_0_SHIPPINGAMT' => urlencode('0.00'),
 			'PAYMENTREQUEST_0_TAXAMT' => urlencode('0.00'),
-			'CANCELURL' => urlencode('http://localhost:80/'),
-			'RETURNURL' => urlencode('http://localhost:80/index.php/checkout')
+			'CANCELURL' => urlencode('http://www.voteformyteam.com/'),
+			'RETURNURL' => urlencode('http://www.voteformyteam.com/checkout/')
 			);
 
 		$fields_string = '';
