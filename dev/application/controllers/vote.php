@@ -74,13 +74,21 @@ class Vote extends CI_Controller
 		$challenge_message = $_POST['challenge_message'];
 		$email_header = "You've been challenged at VoteForMyTeam.com!"; 
 		$sender = $_POST['sender_email'];
+		$email_append = '<br />This message was sent from www.voteformyteam.com';
 
 		$this->load->library('email');
+
+		$config['protocol'] = 'sendmail';
+		$config['charset'] = 'utf-8';
+		$config['wordwrap'] = TRUE;
+		$config['mailtype'] = 'html';
+
+		$this->email->initialize($config);
 
 		$this->email->from($sender);
 		$this->email->to($challenger);
 		$this->email->subject($email_header);
-		$this->email->message($challenge_message);
+		$this->email->message($challenge_message.$email_append);
 		$this->email->send();
 
 		$this->load->view('templates/header');

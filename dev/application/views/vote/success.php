@@ -3,11 +3,20 @@
 $this->load->helper('form'); 
 $this->load->helper('url');
 
+if ($email['L_QTY0'] > 1)
+{
+	$vote_case = 'votes';
+}
+else
+{
+	$vote_case = 'vote';
+}
+
 ?>
 
 <?php
 
-$challenge_prepare = 'I donated '.$email['L_QTY0'].' votes to the American Red Cross for the 2013 March Madness Tournament. Which team are you going to pick?';
+$challenge_prepare = 'I donated '.$email['L_QTY0'].' '.$vote_case.' to the American Red Cross for the 2013 March Madness Tournament. Which team are you going to pick?';
 
 ?>
 <div id="confirm">
@@ -38,8 +47,8 @@ $challenge_prepare = 'I donated '.$email['L_QTY0'].' votes to the American Red C
 
 		</tr>
 		<tr>
-
-			<td><?php echo form_submit('emailsubmit', 'Send Email Challenge'); ?></td>
+			<?php $submit_params = array('name' => 'emailsubmit', 'value' => 'Send Email Challenge', 'class' => 'confirm-submit'); ?>
+			<td><?php echo form_submit($submit_params); ?></td>
 			<td><a href="<?php echo site_url(); ?>">No, Thanks</a></td>
 
 		</tr>

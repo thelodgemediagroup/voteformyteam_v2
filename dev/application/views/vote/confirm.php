@@ -41,11 +41,12 @@
 		$this->load->helper('url');
 
 		echo form_open('finish', '', $result);
-		$submit_params = array('id' => 'confirm_button', 'name' => 'confirm_button', 'value' => 'Confirm Payment');
+		$submit_params = array('name' => 'confirm_button', 'value' => 'Confirm Payment', 'class' => 'confirm-submit');
 		echo form_submit($submit_params);
 		echo form_close();
 
 	?>
+	<br />
 	<a href="<?php echo site_url(); ?>">Cancel</a>
 	</div><!--/ #paypal-buttons -->
 
