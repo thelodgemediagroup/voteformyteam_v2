@@ -17,10 +17,10 @@ class Vote_model extends CI_Model
 		$last_name = $result['LASTNAME'];
 		$time = $result['TIMESTAMP'];
 		$email = $result['EMAIL'];
-		$vote_choices = $result['CUSTOM'];
+		$vote_choices = stripslashes($result['CUSTOM']);
 		//votes by team
-		$votes_json = $result['PAYMENTREQUEST_0_CUSTOM'];
-		$vote_array = json_decode($votes_json);
+		$votes_json = $result['CUSTOM'];
+		$vote_array = json_decode(stripslashes($votes_json));
 
 		//insert them into the team vote database
 		foreach ($vote_array as $key => $value)
