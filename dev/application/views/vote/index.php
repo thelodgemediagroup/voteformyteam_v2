@@ -6,14 +6,15 @@
 
 	<ul class="TabbedPanelsTabGroup">
 
-    	<li class="TabbedPanelsTab" tabindex="0"><center>SWEET 16</center></li>
+		<li class="TabbedPanelsTab" tabindex="0"><center>SWEET SIXTEEN</center></li>
     	<?php /*
-    	<li class="TabbedPanelsTab" tabindex="0"><center>ELITE 8</center></li>
+    	<li class="TabbedPanelsTab" tabindex="0"><center>ELITE EIGHT</center></li>
 
-    	<li class="TabbedPanelsTab" tabindex="0"><center>FINAL 4</center></li>
+    	<li class="TabbedPanelsTab" tabindex="0"><center>FINAL FOUR</center></li>
 
         <li class="TabbedPanelsTab" tabindex="0"><center>CHAMPIONSHIP</center></li>
-		*/ ?>
+        */ ?>
+
     </ul><!-- .TabbedPanelsTabGroup -->
 
 
