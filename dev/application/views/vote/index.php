@@ -36,8 +36,8 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 				
 				<table>
 					<tr>
+						<td colspan="2"><strong>VOTES</strong></td>
 						<td colspan="2">&nbsp;</td>
-						<td><strong>VOTES</strong></td>
 					</tr>
 					<?php
 					$form_attr = array('class' => 'team', 'target' => '_blank');
@@ -105,8 +105,8 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 					<table>
 						
 						<tr>
+							<td colspan="2"><strong>VOTES</strong></td>
 							<td colspan="2">&nbsp;</td>
-							<td><strong>VOTES</strong></td>
 						</tr>
 					
 					<?php
@@ -172,8 +172,8 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 
 					<table>
 						<tr>
+							<td colspan="2"><strong>VOTES</strong></td>
 							<td colspan="2">&nbsp;</td>
-							<td><strong>VOTES</strong></td>
 						</tr>
 					<?php
 					$form_attr = array('class' => 'team', 'target' => '_blank');
@@ -237,8 +237,8 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 
 					<table>
 						<tr>
+							<td colspan="2"><strong>VOTES</strong></td>
 							<td colspan="2">&nbsp;</td>
-							<td><strong>VOTES</strong></td>
 						</tr>
 					<?php
 					$form_attr = array('class' => 'team', 'target' => '_blank');
