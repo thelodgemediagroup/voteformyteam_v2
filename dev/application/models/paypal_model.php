@@ -15,13 +15,17 @@ class Paypal_model extends CI_Model
 
 		foreach ($_POST as $key => $value)
 		{
-			if (($value > 0) && is_numeric($value))
+			if (($value > 0) && is_numeric($value) && isset($value))
 			{
 				$votes[$key] = $value;
 				$vote_tally += $value;
 			}
 		}
 		
+		if (empty($votes))
+		{
+			header('Location: http://www.voteformyteam.com/error');
+		}
 		// Formatting for paypal
 		$paypal_votes = json_encode($votes);
 		$payment_amt = number_format($vote_tally, 2, '.', '');
@@ -105,7 +109,7 @@ class Paypal_model extends CI_Model
 		if ( $result['ACK'] == 'Success')
 		{
 			$response = urldecode($result['TOKEN']);
-			header('Location: https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&token='.$response);
+			header('Location: https://www.paypal.com/webscr?cmd=_express-checkout&token='.$response);
 			exit;
 		}
 		else

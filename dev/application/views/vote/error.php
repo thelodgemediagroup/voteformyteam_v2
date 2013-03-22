@@ -32,6 +32,8 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 
 			<div class="TabbedClassContent">
 
+				<div id="error-msg"><p>Please enter a vote quantity using only digits.</div>
+
 				<div class="contentheader"><?php echo $content_top; ?></div><!--/ .contentheader -->
 				
 				<table>
@@ -298,6 +300,8 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 
 </div><!--/ #TabbedPanels1 -->
 
+<script src="/assets/js/index.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript">
 var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
 </script>

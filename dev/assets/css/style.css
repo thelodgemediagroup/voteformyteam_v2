@@ -200,3 +200,16 @@ table td {
     background: #2E5481;
     border: solid 1px #203E5F;	
 }
+
+#error-msg {
+	background: #fff799; 
+	border: 1px solid #fdc689; 
+	clear: both;
+	padding: 10px 15px; 
+	font-size: 14px; 
+	line-height: 1.5em; 
+	margin: 0px auto; 
+	text-align: center;
+	color: #333;
+	width: 80%;
+}
