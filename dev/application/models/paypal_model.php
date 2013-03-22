@@ -37,11 +37,17 @@ class Paypal_model extends CI_Model
 		{
 			$paypal_description = 'Vote to Donate';
 		}
-
+		/*  TEST CREDENTIALS
 		$paypal_user = 'jslind-testing_api1.test.com';
 		$paypal_pwd = '1363372943';
 		$paypal_signature = 'ADvbVGgx3GmD9N8NvmhgLthtO2nGA4b.NtER6vez61j.28zww3FcWNOm';
-		$paypal_target = 'https://api-3t.sandbox.paypal.com/nvp';		
+		$paypal_target = 'https://api-3t.sandbox.paypal.com/nvp'; */
+
+		// Live
+		$paypal_user = 'voteformyteam_api1.gmail.com';
+		$paypal_pwd = 'GMQ9DXPC5BB5LJDH';
+		$paypal_signature = 'A9dePBBMsuCdujQTqS0ai4qmG89GA6uBNQBnm69kAyNH7lj8Hk1K1o1k';
+		$paypal_target = 'https://api-3t.paypal.com/nvp';
 
 		$fields = array(
 			'USER' => urlencode($paypal_user),
@@ -111,16 +117,17 @@ class Paypal_model extends CI_Model
 	
 	function confirm_checkout()
 	{
-/*		
-		$paypal_user = 'jslind-facilitator_api1.bex.net';
-		$paypal_pwd = '1363196681';
-		$paypal_signature = 'AQU0e5vuZCvSg-XJploSa.sGUDlpAOzMLzUxz.wKZGk0SKuJOFmzOKTt';
-*/
+		/* TEST CREDENTIALS
 		$paypal_user = 'jslind-testing_api1.test.com';
 		$paypal_pwd = '1363372943';
 		$paypal_signature = 'ADvbVGgx3GmD9N8NvmhgLthtO2nGA4b.NtER6vez61j.28zww3FcWNOm';
+		$paypal_target = 'https://api-3t.sandbox.paypal.com/nvp'; */
 
-		$paypal_target = 'https://api-3t.sandbox.paypal.com/nvp';
+		// Live
+		$paypal_user = 'voteformyteam_api1.gmail.com';
+		$paypal_pwd = 'GMQ9DXPC5BB5LJDH';
+		$paypal_signature = 'A9dePBBMsuCdujQTqS0ai4qmG89GA6uBNQBnm69kAyNH7lj8Hk1K1o1k';
+		$paypal_target = 'https://api-3t.paypal.com/nvp';		
 
 		$fields = array(
 			'USER' => urlencode($paypal_user),
@@ -168,12 +175,17 @@ class Paypal_model extends CI_Model
 
 	function finish_checkout($result)
 	{
-
+		/* TEST CREDENTIALS
 		$paypal_user = 'jslind-testing_api1.test.com';
 		$paypal_pwd = '1363372943';
 		$paypal_signature = 'ADvbVGgx3GmD9N8NvmhgLthtO2nGA4b.NtER6vez61j.28zww3FcWNOm';
+		$paypal_target = 'https://api-3t.sandbox.paypal.com/nvp'; */
 
-		$paypal_target = 'https://api-3t.sandbox.paypal.com/nvp';
+		// Live
+		$paypal_user = 'voteformyteam_api1.gmail.com';
+		$paypal_pwd = 'GMQ9DXPC5BB5LJDH';
+		$paypal_signature = 'A9dePBBMsuCdujQTqS0ai4qmG89GA6uBNQBnm69kAyNH7lj8Hk1K1o1k';
+		$paypal_target = 'https://api-3t.paypal.com/nvp';		
 
 		$fields = array(
               'USER' => urlencode($paypal_user),
