@@ -50,8 +50,9 @@ a {
 	padding-left: 20px;
 }
 .contentheader {
-	padding: 10px;
-	height: 50px;
+	/*padding: 10px;*/
+	/* height: 50px; */
+	padding: 20px 24px 40px 24px;
 }
 .style1 {
 	font-size: 11px;
@@ -75,7 +76,7 @@ table {
 
 table td {
 	
-	height: 40px;
+	height: 50px;
 }
 
 .sweet16-team-row {
@@ -119,7 +120,7 @@ table td {
 
 .num_votes {
 	width:30px;
-	height: 18px;
+	height: 24px;
 	margin: 0 4px 0 0;
 	border: 1px solid #999;
 	text-align: center;
@@ -127,7 +128,8 @@ table td {
 }
 
 .vote-submit {
-    padding: 10px 15px;
+	font-size: 16px;
+    padding: 10px 10px;
     margin: 10px 0px 20px 140px;
     background: #4479BA;
     clear: both;
