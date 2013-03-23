@@ -52,7 +52,8 @@ a {
 .contentheader {
 	/*padding: 10px;*/
 	/* height: 50px; */
-	padding: 20px 24px 40px 24px;
+	padding: 20px 24px 20px 24px;
+	font-size: 14px;
 }
 .style1 {
 	font-size: 11px;

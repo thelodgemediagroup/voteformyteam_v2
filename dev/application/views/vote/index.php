@@ -16,15 +16,16 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 
 	<ul class="TabbedPanelsTabGroup">
 
-		<li class="TabbedPanelsTab" tabindex="0"><center>SWEET SIXTEEN</center></li>
-    	<?php /*
-    	<li class="TabbedPanelsTab" tabindex="0"><center>ELITE EIGHT</center></li>
+		<li class="TabbedPanelsTab" tabindex="0"><center>SIXTEEN</center></li>
+    	<?php 
+    	/*
+    	<li class="TabbedPanelsTab" tabindex="0"><center>EIGHT</center></li>
 
-    	<li class="TabbedPanelsTab" tabindex="0"><center>FINAL FOUR</center></li>
+    	<li class="TabbedPanelsTab" tabindex="0"><center>FOUR</center></li>
 
         <li class="TabbedPanelsTab" tabindex="0"><center>CHAMPIONSHIP</center></li>
-        */ ?>
-
+        */ 
+        ?>
     </ul><!-- .TabbedPanelsTabGroup -->
 
 
@@ -36,7 +37,7 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 				
 				<table>
 					<tr>
-						<td colspan="2"><strong>VOTES</strong></td>
+						<td colspan="2"><strong><span style="margin:0 0 0 -10px">VOTES</strong></td>
 						<td colspan="2">&nbsp;</td>
 					</tr>
 					<?php
@@ -105,7 +106,7 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 					<table>
 						
 						<tr>
-							<td colspan="2"><strong>VOTES</strong></td>
+							<td colspan="2"><strong><span style="margin:0 0 0 -10px">VOTES</strong></td>
 							<td colspan="2">&nbsp;</td>
 						</tr>
 					
@@ -172,7 +173,7 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 
 					<table>
 						<tr>
-							<td colspan="2"><strong>VOTES</strong></td>
+							<td colspan="2"><strong><span style="margin:0 0 0 -10px">VOTES</strong></td>
 							<td colspan="2">&nbsp;</td>
 						</tr>
 					<?php
@@ -237,7 +238,7 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 
 					<table>
 						<tr>
-							<td colspan="2"><strong>VOTES</strong></td>
+							<td colspan="2"><strong><span style="margin:0 0 0 -10px">VOTES</strong></td>
 							<td colspan="2">&nbsp;</td>
 						</tr>
 					<?php
