@@ -16,11 +16,11 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 
 	<ul class="TabbedPanelsTabGroup">
 
-		<li class="TabbedPanelsTab" tabindex="0"><center>SWEET SIXTEEN</center></li>
+		<li class="TabbedPanelsTab" tabindex="0"><center>SIXTEEN</center></li>
     	<?php /*
-    	<li class="TabbedPanelsTab" tabindex="0"><center>ELITE EIGHT</center></li>
+    	<li class="TabbedPanelsTab" tabindex="0"><center>EIGHT</center></li>
 
-    	<li class="TabbedPanelsTab" tabindex="0"><center>FINAL FOUR</center></li>
+    	<li class="TabbedPanelsTab" tabindex="0"><center>FOUR</center></li>
 
         <li class="TabbedPanelsTab" tabindex="0"><center>CHAMPIONSHIP</center></li>
         */ ?>

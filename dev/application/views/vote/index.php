@@ -4,11 +4,11 @@
 
 <?php
 
-$content_top = "<p>Red Cross teams up with communities, neighborhoods, and individuals in the event of emergencies. We ask you to TEAM UP with Red Cross to raise money to support their mission.  Vote for your favorite basketball team and lend your support to American Red Cross.</p>
+$content_top = "<p>Red Cross teams up with communities, neighborhoods, and individuals in the event of emergencies. We ask you to TEAM UP with Red Cross to raise money to support their mission.  Vote for your favorite basketball teams and lend your support to American Red Cross.</p>
  <br/>
 <p>Your vote dollars will impact disaster relief, blood collection, health/safety training and education, and support for armed forces families around the world.  Even a small vote (donation) can go a long way to easing suffering and begin putting shattered lives back together.</p>
  <br/>
-<p>Show your support for your favorite basketball team and also for American Red Cross.  Cast your vote for your favorite team below, each vote will cost $1 and net proceeds will go directly to American Red Cross to help support the tremendous work being performed daily.</p>";
+<p>Show your support for your favorite basketball teams and also for American Red Cross.  Cast your votes for your favorite teams below, each vote will cost $1 and net proceeds will go directly to American Red Cross to help support the tremendous work being performed daily.</p>";
 
 ?>
 
@@ -37,7 +37,7 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 				
 				<table>
 					<tr>
-						<td colspan="2"><strong><span style="margin:0 0 0 -10px">VOTES</strong></td>
+						<td colspan="2"><strong><span style="margin:0 0 0 -50px">Enter Votes Below</strong></td>
 						<td colspan="2">&nbsp;</td>
 					</tr>
 					<?php
