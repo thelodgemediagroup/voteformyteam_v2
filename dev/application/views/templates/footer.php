@@ -15,7 +15,7 @@ American Red Cross provides relief to those affected by disasters and empowers i
 				<br/>
 				<br/>
 
-				<p class="style1">If you are having problems with this site please contact <a href="mailto:support@voteformyteam.com">support@voteformyteam.com</a></p>
+				<p class="style1">If you have comments/suggestions for this site please contact <a href="mailto:support@voteformyteam.com">support@voteformyteam.com</a></p>
 
 		</div><!--/ #footer -->
 
