@@ -17,7 +17,6 @@ else
 <?php
 
 $challenge_prepare = 'I donated '.$email['L_QTY0'].' '.$vote_case.' to the American Red Cross for the 2013 Men\'s Basketball Tournament. Which teams are you going to pick?<br/>';
-$challenge_prepare .= 'Visit <a href="http://voteformyteam.com">voteformyteam.com</a> to vote for your favorite teams and support American Red Cross.';
 
 ?>
 <div id="confirm">

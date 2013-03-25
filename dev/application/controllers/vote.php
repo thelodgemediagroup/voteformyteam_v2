@@ -86,10 +86,10 @@ class Vote extends CI_Controller
 	public function send_email()
 	{
 		$challenger = $_POST['challenger'];
-		$challenge_message = $_POST['challenge_message'];
+		$challenge_message = '<p>'.$_POST['challenge_message'].'</p>';
 		$email_header = "You've been challenged at VoteForMyTeam.com!"; 
 		$sender = $_POST['sender_email'];
-		$email_append = '<br />This message was sent from www.voteformyteam.com';
+		$email_append = '<p>Visit <a href="http://voteformyteam.com">voteformyteam.com</a> to vote for your favorite teams and support American Red Cross.</p><p>This message was sent from www.voteformyteam.com</p>';
 
 		$this->load->library('email');
 
