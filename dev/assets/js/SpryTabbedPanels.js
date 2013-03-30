@@ -34,7 +34,7 @@ if (typeof Spry == "undefined") window.Spry = {}; if (!Spry.Widget) Spry.Widget 
 Spry.Widget.TabbedPanels = function(element, opts)
 {
 	this.element = this.getElement(element);
-	this.defaultTab = 0; // Show the first panel by default.
+	this.defaultTab = 1; // Show the first panel by default.
 	this.tabSelectedClass = "TabbedPanelsTabSelected";
 	this.tabHoverClass = "TabbedPanelsTabHover";
 	this.tabFocusedClass = "TabbedPanelsTabFocused";
