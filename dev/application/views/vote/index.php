@@ -21,11 +21,8 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
     	<li class="TabbedPanelsTab" tabindex="0"><center>EIGHT</center></li>
 		
     	<li class="TabbedPanelsTab" tabindex="0"><center>FOUR</center></li>
-		<?php 
-    	/*
+
         <li class="TabbedPanelsTab" tabindex="0"><center>CHAMPIONSHIP</center></li>
-        */ 
-        ?>
     </ul><!-- .TabbedPanelsTabGroup -->
 
 
@@ -229,7 +226,6 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 						?>
 			</div><!--/ .TabbedClassContent -->
 
-			<?php /*
 			<div class="TabbedClassContent">
 
 				
@@ -294,7 +290,7 @@ $content_top = "<p>Red Cross teams up with communities, neighborhoods, and indiv
 						?>
 
 			</div><!--/ .TabbedClassContent -->
-			*/ ?>
+
 	</div><!--/ .TabbedPanelsContentGroup -->
 
 </div><!--/ #TabbedPanels1 -->
